@@ -5,8 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container">
+        <label id="heading">Heading<p>Paragraph</p></label>
+
+        <button id="btn_hide">Hide</button>
+        <button id="btn_show">Show</button>
+        <button id="btn_toggle">Toggle</button>
+    </div>
+
+    <div class="container my-5">
+        <label class="my-3">Inputkan Data : </label>
+        <div class="row">
+            <input class="form-control jquery-form-control w-25" id="bilangan1">
+            +<input class="form-control jquery-form-control w-25" id="bilangan2">
+            =<input class="form-control jquery-form-control w-25" id="hasil" disabled>
+            <button class="btn btn-outline-warning w-25 my-3">Jumlahkan</button>
+        </div>
+    </div>
     
+    <script src="jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script>
+
+        $("#btn_hide").click(function(){
+            $("label").hide(1000)
+        })
+
+        $("#btn_show").click(function(){
+            $("label").show(1000)
+        })
+
+        $("#btn_toggle").click(function(){
+            $("label").toggle(1000)
+        })
+
+
+    // // get
+    // $(".btn-outline-warning").click(function(){
+    //     alert("value : " + $(".jquery-form-control").val());
+
+    // })
+
+    // // Set
+    
+    //     $(".btn-outline-warning").click(function(){
+    //         $(
+        
+    // ".jquery-form-control").val("Hello");
+    //     })
+        
+    $(".container").keyup(function(){
+        // function Get
+        var bil1 = $("#bilangan1").val();
+        var bil2 = $("#bilangan2").val();
+
+        var hasil = parseInt(bil1)+ parseInt(bil2);
+
+        // Function set
+        $("#hasil").val(hasil);
+    })
+    </script>
 </body>
 </html>
